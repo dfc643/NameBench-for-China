@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>NameBench: {{ timestamp }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+    {% include "style.css" %}
+  </style>
+</head>
+<body onload="fTranslate()">
+<script Language="Javascript" type="text/javascript">
+function fReplace(or, ne) {
+	window.document.getElementById('big_summary').innerHTML=window.document.getElementById('big_summary').innerHTML.replace(or, ne);
+	window.document.getElementById('recommended_config').innerHTML=window.document.getElementById('recommended_config').innerHTML.replace(or, ne);
+	window.document.getElementById('nsdetails').innerHTML=window.document.getElementById('nsdetails').innerHTML.replace(or, ne);
+	window.document.getElementById('config').innerHTML=window.document.getElementById('config').innerHTML.replace(or, ne);
+}
+function uReplace(or, ne) {
+	window.document.getElementById('graphs').innerHTML=window.document.getElementById('graphs').innerHTML.replace(or, ne);
+}
+function fTranslate() {
+	fReplace(/The current preferred DNS server./gi, decodeURIComponent('%e5%bd%93%e5%89%8d%e7%b3%bb%e7%bb%9f%e4%b8%bb%e8%a6%81DNS%e6%9c%8d%e5%8a%a1%e5%99%a8'));
+	fReplace(/Replica of/gi, decodeURIComponent('%e6%98%af%e9%95%9c%e5%83%8f%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%85%8b%e9%9a%86%e8%87%aa'));
+	fReplace(/appears incorrect/gi, decodeURIComponent('%e6%9f%a5%e8%af%a2%e7%bb%93%e6%9e%9c%e4%b8%8d%e5%8c%b9%e9%85%8d'));
+	fReplace(/A backup DNS server for this system./gi, decodeURIComponent('%e5%bd%93%e5%89%8d%e7%b3%bb%e7%bb%9f%e6%ac%a1%e8%a6%81DNS%e6%9c%8d%e5%8a%a1%e5%99%a8'));
+	fReplace(/No answer \(SERVFAIL\)/gi, decodeURIComponent('%e6%9f%a5%e8%af%a2%e6%97%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%97%a0%e5%ba%94%e7%ad%94'));
+	fReplace(/is hijacked/gi, decodeURIComponent('%e8%a2%ab%e5%8a%ab%e6%8c%81'));
+	fReplace(/ queries to this host failed/gi, decodeURIComponent('%e6%ac%a1%e9%80%9a%e8%bf%87%e8%af%a5%e4%b8%bb%e6%9c%ba%e6%9f%a5%e8%af%a2%e5%9d%87%e5%a4%b1%e8%b4%a5'));
+	fReplace(/ tests, last: /gi, decodeURIComponent('%e9%a1%b9%e6%b5%8b%e8%af%95%ef%bc%8c%e6%9c%80%e5%90%8e%e4%b8%80%e6%ac%a1%e5%a4%b1%e8%b4%a5%e7%9a%84%e6%9f%a5%e8%af%a2%3a'));
+	fReplace(/Too many warnings /gi, decodeURIComponent('%e9%97%ae%e9%a2%98%e5%a4%aa%e5%a4%9a'));
+	fReplace(/probably broken./gi, decodeURIComponent('%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%8f%af%e8%83%bd%e5%81%9c%e6%9c%ba%e4%ba%86'));
+	fReplace(/Unable to get uncached results for/gi, decodeURIComponent('%e6%97%a0%e6%b3%95%e5%be%97%e5%88%b0%e6%9c%aa%e7%bc%93%e5%ad%98%e7%9a%84%e6%9f%a5%e8%af%a2%e7%bb%93%e6%9e%9c'));
+	
+	fReplace(/benchmark_thread_count/gi, decodeURIComponent('%e8%af%84%e6%b5%8b%e5%90%8c%e6%97%b6%e8%bf%90%e8%a1%8c%e7%ba%bf%e7%a8%8b%e6%95%b0'));
+	fReplace(/enable_censorship_checks/gi, decodeURIComponent('%e6%98%af%e5%90%a6%e5%90%af%e7%94%a8%e4%ba%92%e8%81%94%e7%bd%91%e5%ae%a1%e6%9f%a5%e6%a3%80%e6%9f%a5'));
+	fReplace(/health_thread_count/gi, decodeURIComponent('DNS%e6%b1%a1%e6%9f%93%e6%a3%80%e6%9f%a5%e7%ba%bf%e7%a8%8b%e6%95%b0'));
+	fReplace(/health_timeout/gi, decodeURIComponent('DNS%e6%b1%a1%e6%9f%93%e6%a3%80%e6%9f%a5%e8%b6%85%e6%97%b6'));
+	fReplace(/hide_results/gi, decodeURIComponent('%e9%9a%90%e8%97%8f%e8%af%84%e6%b5%8b%e7%bb%93%e6%9e%9c'));
+	fReplace(/input_source/gi, decodeURIComponent('%e8%af%84%e6%b5%8b%e6%97%b6%e6%89%80%e4%bd%bf%e7%94%a8%e6%95%b0%e6%8d%ae%e6%9d%a5%e6%ba%90'));
+	fReplace(/num_servers/gi, decodeURIComponent('%e8%af%84%e6%b5%8b%e6%97%b6%e5%b7%b2%e6%b5%8b%e8%af%95%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%95%b0%e7%9b%ae'));
+	fReplace(/ping_timeout/gi, decodeURIComponent('Ping %e8%b6%85%e6%97%b6%e9%99%90%e9%a2%9d'));
+	fReplace(/query_count/gi, decodeURIComponent('%e9%9a%8f%e6%9c%ba%e6%8a%bd%e5%8f%96%e5%9f%9f%e5%90%8d%e6%a3%80%e6%9f%a5%e6%95%b0%e7%9b%ae'));
+	fReplace(/run_count/gi, decodeURIComponent('%e8%af%84%e6%b5%8b%e6%80%bb%e5%85%b1%e6%b5%8b%e8%af%95%e6%ac%a1%e6%95%b0'));
+	fReplace(/select_mode/gi, decodeURIComponent('%e4%bb%8e%e6%95%b0%e6%8d%ae%e6%ba%90%e4%b8%ad%e6%8a%bd%e5%8f%96%e6%95%b0%e6%8d%ae%e9%80%89%e6%8b%a9%e6%a8%a1%e5%bc%8f'));
+	fReplace(/template/gi, decodeURIComponent('%e6%89%93%e5%8d%b0%e6%8a%a5%e5%91%8a%e6%97%b6%e4%bd%bf%e7%94%a8%e6%a8%a1%e6%9d%bf'));
+	fReplace(/upload_results/gi, decodeURIComponent('%e6%98%af%e5%90%a6%e4%b8%8a%e4%bc%a0%e7%bb%93%e6%9e%9c'));
+	fReplace(/<td>version/gi, "<td>"+decodeURIComponent('%e8%af%84%e6%b5%8b%e6%a0%b8%e5%bf%83%e7%a8%8b%e5%ba%8f%e7%89%88%e6%9c%ac'));
+	fReplace(/china/gi, decodeURIComponent('%e4%b8%ad%e5%8d%8e%e4%ba%ba%e6%b0%91%e5%85%b1%e5%92%8c%e5%9b%bd'));
+	
+	fReplace(/Aliyun/gi, decodeURIComponent('%e9%98%bf%e9%87%8c%e4%ba%91'));
+	fReplace(/CNNIC SDNS/gi, decodeURIComponent('CNNIC%e5%85%ac%e5%85%b1DNS'));
+	fReplace(/114DNS Services/gi, decodeURIComponent('114%e5%85%ac%e5%85%b1DNS'));
+	fReplace(/DNSPai/gi, decodeURIComponent('DNS%e6%b4%be '));
+	fReplace(/ TeMoRa/gi, decodeURIComponent('%e7%94%b5%e7%a7%bb%e9%93%81'));
+	fReplace(/Baidu/gi, decodeURIComponent('%e7%99%be%e5%ba%a6'));
+	fReplace(/Google Public DNS/gi, decodeURIComponent('%e8%b0%b7%e6%ad%8c%e5%85%ac%e5%85%b1DNS'));
+	
+	fReplace(/Anhui/gi, decodeURIComponent('%e5%ae%89%e5%be%bd'));
+	fReplace(/Beijing/gi, decodeURIComponent('%e5%8c%97%e4%ba%ac'));
+	fReplace(/Chongqing/gi, decodeURIComponent('%e9%87%8d%e5%ba%86'));
+	fReplace(/Fujian/gi, decodeURIComponent('%e7%a6%8f%e5%bb%ba'));
+	fReplace(/Gansu/gi, decodeURIComponent('%e7%94%98%e8%82%83'));
+	fReplace(/Guangdong/gi, decodeURIComponent('%e5%b9%bf%e4%b8%9c'));
+	fReplace(/Guangxi/gi, decodeURIComponent('%e5%b9%bf%e8%a5%bf'));
+	fReplace(/Guizhou/gi, decodeURIComponent('%e8%b4%b5%e5%b7%9e'));
+	fReplace(/Henan/gi, decodeURIComponent('%e6%b2%b3%e5%8d%97'));
+	fReplace(/Heilongjiang/gi, decodeURIComponent('%e9%bb%91%e9%be%99%e6%b1%9f'));
+	fReplace(/Hubei/gi, decodeURIComponent('%e6%b9%96%e5%8c%97'));
+	fReplace(/Hunan/gi, decodeURIComponent('%e6%b9%96%e5%8d%97'));
+	fReplace(/Jiangsu/gi, decodeURIComponent('%e6%b1%9f%e8%8b%8f'));
+	fReplace(/Jiangxi/gi, decodeURIComponent('%e6%b1%9f%e8%a5%bf'));
+	fReplace(/Neimonggu/gi, decodeURIComponent('%e5%86%85%e8%92%99%e5%8f%a4'));
+	fReplace(/Shandong/gi, decodeURIComponent('%e5%b1%b1%e4%b8%9c'));
+	fReplace(/Shanxi/gi, decodeURIComponent('%e5%b1%b1%e8%a5%bf'));
+	fReplace(/Shanghai/gi, decodeURIComponent('%e4%b8%8a%e6%b5%b7'));
+	fReplace(/Sicuang/gi, decodeURIComponent('%e5%9b%9b%e5%b7%9d'));
+	fReplace(/Tianjin/gi, decodeURIComponent('%e5%a4%a9%e6%b4%a5'));
+	fReplace(/Yunnan/gi, decodeURIComponent('%e4%ba%91%e5%8d%97'));
+	fReplace(/Zejiang/gi, decodeURIComponent('%e6%b5%99%e6%b1%9f'));
+	fReplace(/Jiling/gi, decodeURIComponent('%e5%90%89%e6%9e%97'));
+	fReplace(/Shan'xi/gi, decodeURIComponent('%e9%99%95%e8%a5%bf'));
+	fReplace(/Hangzhou Dianzi Unversity CN/gi, decodeURIComponent('%e6%9d%ad%e5%b7%9e%e7%94%b5%e5%ad%90%e5%a4%a7%e5%ad%a6'));
+	fReplace(/Shanghai Jiaotong University CN/gi, decodeURIComponent('%e4%b8%8a%e6%b5%b7%e4%ba%a4%e5%a4%a7'));
+	fReplace(/Shanghai Jiaotong University-2 CN/gi, decodeURIComponent('%e4%b8%8a%e6%b5%b7%e4%ba%a4%e5%a4%a7-2'));
+	
+	fReplace(/ Telecom/gi, decodeURIComponent('%e7%94%b5%e4%bf%a1'));
+	fReplace(/ Unicom/gi, decodeURIComponent('%e8%81%94%e9%80%9a'));
+	fReplace(/ Public DNS/gi, decodeURIComponent('%e5%85%ac%e5%85%b1DNS'));
+	fReplace(/SYS-/gi, decodeURIComponent('%e7%b3%bb%e7%bb%9f-'));
+	
+	uReplace(/SYS-/gi, "%e7%b3%bb%e7%bb%9f-");
+	uReplace(/\+TeMoRa/gi, "%e7%94%b5%e7%a7%bb%e9%93%81");
+	uReplace(/\%20TeMoRa/gi, "%e7%94%b5%e7%a7%bb%e9%93%81");
+	uReplace(/\+Telecom/gi, "%e7%94%b5%e4%bf%a1");
+	uReplace(/\%20Telecom/gi, "%e7%94%b5%e4%bf%a1");
+	uReplace(/\+Unicom/gi, "%e8%81%94%e9%80%9a");
+	uReplace(/\%20Unicom/gi, "%e8%81%94%e9%80%9a");
+	uReplace(/\+Public\+DNS/gi, "%e5%85%ac%e5%85%b1DNS");
+	uReplace(/\%20Public\%20DNS/gi, "%e5%85%ac%e5%85%b1DNS");
+	uReplace(/Aliyun/gi, "%e9%98%bf%e9%87%8c%e4%ba%91");
+	uReplace(/CNNIC\+SDNS/gi, "CNNIC%e5%85%ac%e5%85%b1DNS");
+	uReplace(/CNNIC\%20SDNS/gi, "CNNIC%e5%85%ac%e5%85%b1DNS");
+	uReplace(/114DNS\+Services/gi, "114%e5%85%ac%e5%85%b1DNS");
+	uReplace(/114DNS\%20Services/gi, "114%e5%85%ac%e5%85%b1DNS");
+	uReplace(/DNSPai/gi, "DNS%e6%b4%be ");
+	uReplace(/Baidu/gi, "%e7%99%be%e5%ba%a6");
+	uReplace(/Google\+Public\+DNS/gi, "%e8%b0%b7%e6%ad%8c%e5%85%ac%e5%85%b1DNS");
+	uReplace(/Google\%20Public\%20DNS/gi, "%e8%b0%b7%e6%ad%8c%e5%85%ac%e5%85%b1DNS");
+	uReplace(/Anhui/gi, "%e5%ae%89%e5%be%bd");
+	uReplace(/Beijing/gi, "%e5%8c%97%e4%ba%ac");
+	uReplace(/Chongqing/gi, "%e9%87%8d%e5%ba%86");
+	uReplace(/Fujian/gi, "%e7%a6%8f%e5%bb%ba");
+	uReplace(/Gansu/gi, "%e7%94%98%e8%82%83");
+	uReplace(/Guangdong/gi, "%e5%b9%bf%e4%b8%9c");
+	uReplace(/Guangxi/gi, "%e5%b9%bf%e8%a5%bf");
+	uReplace(/Guizhou/gi, "%e8%b4%b5%e5%b7%9e");
+	uReplace(/Henan/gi, "%e6%b2%b3%e5%8d%97");
+	uReplace(/Heilongjiang/gi, "%e9%bb%91%e9%be%99%e6%b1%9f");
+	uReplace(/Hubei/gi, "%e6%b9%96%e5%8c%97");
+	uReplace(/Hunan/gi, "%e6%b9%96%e5%8d%97");
+	uReplace(/Jiangsu/gi, "%e6%b1%9f%e8%8b%8f");
+	uReplace(/Jiangxi/gi, "%e6%b1%9f%e8%a5%bf");
+	uReplace(/Neimonggu/gi, "%e5%86%85%e8%92%99%e5%8f%a4");
+	uReplace(/Shandong/gi, "%e5%b1%b1%e4%b8%9c");
+	uReplace(/Shanxi/gi, "%e5%b1%b1%e8%a5%bf");
+	uReplace(/Shanghai/gi, "%e4%b8%8a%e6%b5%b7");
+	uReplace(/Sicuang/gi, "%e5%9b%9b%e5%b7%9d");
+	uReplace(/Tianjin/gi, "%e5%a4%a9%e6%b4%a5");
+	uReplace(/Yunnan/gi, "%e4%ba%91%e5%8d%97");
+	uReplace(/Zejiang/gi, "%e6%b5%99%e6%b1%9f");
+	uReplace(/Jiling/gi, "%e5%90%89%e6%9e%97");
+	uReplace(/Shan'xi/gi, "%e9%99%95%e8%a5%bf");
+	uReplace(/Hangzhou\+Dianzi\+Unversity\+CN/gi, "%e6%9d%ad%e5%b7%9e%e7%94%b5%e5%ad%90%e5%a4%a7%e5%ad%a6");
+	uReplace(/Hangzhou\%20Dianzi\%20Unversity\%20CN/gi, "%e6%9d%ad%e5%b7%9e%e7%94%b5%e5%ad%90%e5%a4%a7%e5%ad%a6");
+	uReplace(/Shanghai\+Jiaotong\+University\+CN/gi, "%e4%b8%8a%e6%b5%b7%e4%ba%a4%e5%a4%a7");
+	uReplace(/Shanghai\%20Jiaotong\%20University\%20CN/gi, "%e4%b8%8a%e6%b5%b7%e4%ba%a4%e5%a4%a7");
+	uReplace(/Shanghai\+Jiaotong\+University-2\+CN/gi, "%e4%b8%8a%e6%b5%b7%e4%ba%a4%e5%a4%a7-2");
+	uReplace(/Shanghai\%20Jiaotong\%20University-2\%20CN/gi, "%e4%b8%8a%e6%b5%b7%e4%ba%a4%e5%a4%a7-2");
+	
+	fReplace(/>Faster/gi, ">"+decodeURIComponent('%e6%9b%b4%e5%bf%ab'));
+	fReplace(/>Undecided/gi, ">"+decodeURIComponent('%e6%97%a0%e6%b3%95%e5%86%b3%e5%ae%9a'));
+	fReplace(/>Too few tests \(needs 50\)/gi, ">"+decodeURIComponent('%e6%b5%8b%e8%af%95%e9%a1%b9%e5%a4%aa%e5%b0%91(%e8%87%b3%e5%b0%9150%e9%a1%b9)'));
+	fReplace(/Slower/gi, decodeURIComponent('%e6%9b%b4%e6%85%a2'));
+	fReplace(/Timeout/gi, decodeURIComponent('%e6%9f%a5%e8%af%a2%e8%b6%85%e6%97%b6'));
+	fReplace(/Failed /gi, decodeURIComponent('%e5%a4%b1%e8%b4%a5'));
+	fReplace(/automatic/gi, decodeURIComponent('%e8%87%aa%e5%8a%a8'));
+	fReplace(/Hijacking/gi, decodeURIComponent('%e5%8a%ab%e6%8c%81'));
+	fReplace(/NameBench:/gi, decodeURIComponent('DNS%e8%af%84%e6%b5%8b%e6%8a%a5%e5%91%8a%ef%bc%9a'));
+}
+</script>
+
+<div id="container">
+{% if sharing_url %}<div id="notice">Thanks for uploading your results! Your URL: <a href="{{ sharing_url }}">{{ sharing_url }}</a> ({{ sharing_state }})</div>{% endif %}
+<div class="version"><script>document.write(decodeURIComponent("%e5%9f%9f%e5%90%8d%e6%9c%8d%e5%8a%a1%e5%99%a8%e8%af%84%e6%b5%8b%e7%b3%bb%e7%bb%9f"))</script> (<script>document.write(decodeURIComponent("%e5%86%85%e6%a0%b8"))</script>namebench {{ version }}) <a href="http://www.fcsys.us" target="_blank"><script>document.write(decodeURIComponent("%5b%e6%b1%89%e5%8c%96%ef%bc%9aFC-SYSTEM%5d"))</script></a></div>
+
+
+<div id="big_summary" class="greybox">
+	<h4><strong>{% if best_ns.ip == system_primary %}<script>document.write(decodeURIComponent("%e6%82%a8%e5%bd%93%e5%89%8d%e7%9a%84%e4%b8%bbDNS%e6%9c%8d%e5%8a%a1%e5%99%a8"))</script>{% else %}{{ best_ns.name }}{% endif %}</strong></h4>
+{% if compare_reference.ip != best_ns.ip %}
+	<h1>{{ compare_title }}</h1><h5 class="faster">{{ compare_subtitle }}</h5>
+	<h4>{% if compare_reference.name %}<script>document.write(decodeURIComponent("%e4%ba%8e"))</script>{% if compare_reference.ip == system_primary %}<script>document.write(decodeURIComponent("%e6%82%a8%e5%bd%93%e5%89%8d%e7%9a%84%e4%b8%bbDNS%e6%9c%8d%e5%8a%a1%e5%99%a8"))</script>{% else %}{{ compare_reference.name }}{% endif %}{% endif %}</h4>
+{% else %}
+	<h1><script>document.write(decodeURIComponent("%e6%9c%80%e5%bf%ab"))</script></h1>
+	<h4></h4>
+{% endif %}
+</div>
+
+<div id="recommended_config" class="greybox">
+	<h4><script>document.write(decodeURIComponent("%e6%8e%a8%e8%8d%90DNS%e9%85%8d%e7%bd%ae%e6%96%b9%e6%a1%88%ef%bc%88%e6%9c%80%e5%bf%ab%2b%e6%9c%80%e8%bf%91%ef%bc%89"))</script></h4>
+	<table>
+	{% for ns in recommended %}
+	<tr>
+	  <td>{% if loop.index == 1 %}<script>document.write(decodeURIComponent("%e4%b8%bb%e8%a6%81"))</script>{% elif loop.index == 2 %}<script>document.write(decodeURIComponent("%e6%ac%a1%e8%a6%81"))</script>{% else %}<script>document.write(decodeURIComponent("%e7%ac%ac%e4%b8%89"))</script>{% endif %}<script>document.write(decodeURIComponent("DNS%e6%9c%8d%e5%8a%a1%e5%99%a8"))</script></td>
+    <td><div class="ip">{{ ns.ip }}</div></td><td class="rec_name">{% if ns.name != ns.ip %}{{ ns.name }}{% endif %}</td>
+	</tr>
+{% endfor %}
+  </table>
+</div>
+
+
+<h2><script>document.write(decodeURIComponent("%e5%b7%b2%e6%b5%8b%e8%af%95%e8%bf%87%e7%9a%84DNS%e6%9c%8d%e5%8a%a1%e5%99%a8"))</script></h2>
+
+<div id="nsdetails">
+<table id="nstable">
+<thead>
+<tr>
+  <td nowrap="nowrap">IP</td>
+  <td><script>document.write(decodeURIComponent("%e6%8f%90%e4%be%9b%e5%95%86"))</script></td>
+  <td nowrap="nowrap"><script>document.write(decodeURIComponent("%e4%b8%bb%e6%9c%ba%e5%90%8d"))</script></td>
+  <td nowrap="nowrap"><script>document.write(decodeURIComponent("%e5%b9%b3%e5%9d%87(%e6%af%ab%e7%a7%92)"))</script></td>
+  <td nowrap="nowrap"><script>document.write(decodeURIComponent("%e7%9b%b8%e5%b7%ae"))</script></td>
+	<td nowrap="nowrap"><script>document.write(decodeURIComponent("%e6%9c%80%e5%b0%8f"))</script></td>
+	<td nowrap="nowrap"><script>document.write(decodeURIComponent("%e6%9c%80%e5%a4%a7"))</script></td>
+  <td nowrap="nowrap">TO</td>
+  <td nowrap="nowrap">NX</td>
+  <td><script>document.write(decodeURIComponent("%e5%85%b6%e4%bb%96%e6%91%98%e8%a6%81"))</script></td>
+</tr>
+</thead>
+{# (ns, overall_average, run_averages, fastest, slowest, failure_count, nx_count) #}
+{% for row in ns_summary %}
+<tr class="{% if row.is_disabled %}disabled{% else %}normal{{ loop.cycle(' odd ', ' even')}}{% endif %}{% if row.sys_position == 0 %} primary_row{% endif %}{% if row.is_error_prone %} unhealthy_host{% endif %}">
+
+  <td class="ip_cell"><a href="http://www.ip.cn/index.php?ip={{ row.ip}}" class="info">{{ row.ip }}{% if row.version %}<span>{{ row.version }}</span>{% endif %}</td>
+  <td class="name_cell">{{ row.name }}</td>
+  <td class="hostname_cell"><a href="http://www.ip.cn/index.php?ip={{ row.hostname}}" class="info">{{ row.hostname }}{% if row.node_ids %}<span>{% for node in row.node_ids %}{{ node }} {% endfor %}</span>{% endif %}</a></td>
+  <td>{% if row.overall_average %}{{ "%0.2f"|format(row.overall_average) }}{% else %}{{ "%0.2f"|format(row.check_average) }}{% endif %}</td>
+  <td>{% if row.diff %}{{ "%0.1f"|format(row.diff) }}%{% endif %}</td>
+  <td>{% if row.duration_min %}{{ "%0.1f"|format(row.duration_min) }}{% endif %}</td>
+  <td>{% if row.duration_max %}{{ "%0.1f"|format(row.duration_max) }}{% endif %}</td>
+  <td {% if row.timeout_count != 0 %}class="error_count"{% endif %}>{{ row.timeout_count }}</td>
+  <td>{{ row.nx_count }}</td>
+  <td class="notes_cell">
+  {% if row.notes %}
+    <ul class="warnings">
+      {% for note in row.notes %}
+      <li>{% if note.url %}<a href="{{ note.url }}">{% endif %}{{ note.text }}{% if note.url %}</a>{% endif %}</li>
+      {% endfor %}
+	</ul>
+  {% endif %}
+  </td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+
+<h2><script>document.write(decodeURIComponent("%e7%bb%9f%e8%ae%a1%e5%9b%be%e8%a1%a8"))</script></h2>
+
+<div id="graphs" class="section">
+<h2><script>document.write(decodeURIComponent("%e5%b9%b3%e5%9d%87%e5%93%8d%e5%ba%94%e6%97%b6%e9%97%b4"))</script></h2>
+<img src="{{ mean_duration_url }}" alt="Mean Duration Graph" />
+
+<h3><script>document.write(decodeURIComponent("%e5%90%84%e5%ba%94%e7%ad%94%e6%9c%80%e5%bf%ab%e5%8f%8d%e5%ba%94%e6%97%b6%e9%97%b4"))</script></h3>
+<img src="{{ min_duration_url }}" alt="Fastest Response Graph" />
+
+<h3><script>document.write(decodeURIComponent("%e5%93%8d%e5%ba%94%e5%88%86%e5%b8%83%e5%9b%be%e8%a1%a8%ef%bc%88%e9%a6%96%e6%ac%a1200ms%ef%bc%89"))</script></h3>
+
+<img src="{{ distribution_url_200 }}" alt="Response Distribution Graph (first 200ms)" />
+
+<h3><script>document.write(decodeURIComponent("%e5%93%8d%e5%ba%94%e5%88%86%e5%b8%83%e5%9b%be%e8%a1%a8%ef%bc%88%e5%85%a8%e9%83%a8%ef%bc%89"))</script></h3>
+
+<img src="{{ distribution_url }}" alt="Response Distribution Graph (full)" />
+</div>
+
+{% if csv_link %}
+<h2><script>document.write(decodeURIComponent("%e8%af%84%e6%b5%8b%e4%b8%ad%e8%af%b7%e6%b1%82%e8%af%a6%e6%83%85"))</script></h2>
+
+<div id="details" class="section">
+<script>document.write(decodeURIComponent("%e6%9f%a5%e7%9c%8b%e8%af%84%e6%b5%8b%e8%bf%87%e7%a8%8b%e4%b8%ad%e7%9a%84%e8%af%b7%e6%b1%82%e8%af%a6%e6%83%85%ef%bc%8c%e8%af%b7%e4%b8%8b%e8%bd%bd"))</script> <a href="{{ csv_link }}"><script>document.write(decodeURIComponent("%e9%80%97%e5%8f%b7%e5%88%86%e9%9a%94%e7%ac%a6%e6%96%87%e4%bb%b6(CSV)"))</script></a> <script>document.write(decodeURIComponent("%e5%88%b0%e7%94%b5%e8%84%91%e4%b8%ad%e4%bd%bf%e7%94%a8Excel%e6%89%93%e5%bc%80%e3%80%82"))</script>
+</div>
+{% endif %}
+
+{% if config %}
+<h2><script>document.write(decodeURIComponent("%e8%af%84%e6%b5%8b%e4%b8%ad%e4%bd%bf%e7%94%a8%e7%9a%84%e5%8f%82%e6%95%b0"))</script></h2>
+
+
+<div id="config" class="section">
+<table id="configtable">
+	<thead><tr><td><script>document.write(decodeURIComponent("%e5%8f%82%e6%95%b0%e5%90%8d"))</script></td><td><script>document.write(decodeURIComponent("%e6%95%b0%e5%80%bc"))</script></td></tr></thead>
+	{% for item in config %}
+	  <tr><td>{{ item.0 }}</td><td>{{ item.1 }}</td></tr>
+	{% endfor %}
+</table>
+</div>
+{% endif %}
+</div>
+</body>
+</html>
+
